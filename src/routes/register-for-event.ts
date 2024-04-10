@@ -1,9 +1,7 @@
 import { serializerCompiler, validatorCompiler, ZodTypeProvider }  from "fastify-type-provider-zod";
 import {z} from 'zod';
-import { generateSlug } from "../utils/generate-slug";
 import { prisma } from "../lib/prisma";
 import { FastifyInstance } from "fastify";
-import { request } from "http";
 
 export async function registerForEvent(app: FastifyInstance){
     app.withTypeProvider<ZodTypeProvider>()
@@ -28,7 +26,13 @@ export async function registerForEvent(app: FastifyInstance){
                     name,
                     email,
                 } = request.body
-                        
+                
+                
+                const attendeeFromEmail = await prisma.attendee.findUnique({
+                    where: {
+                        eventId_email
+                    }
+                })
                 const attendee = await prisma.attendee.create({
                     data: {
                         name,
