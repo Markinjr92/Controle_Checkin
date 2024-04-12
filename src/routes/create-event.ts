@@ -1,4 +1,4 @@
-import { serializerCompiler, validatorCompiler, ZodTypeProvider }  from "fastify-type-provider-zod";
+import { ZodTypeProvider }  from "fastify-type-provider-zod";
 import {z} from 'zod';
 import { generateSlug } from "../utils/generate-slug";
 import { prisma } from "../lib/prisma";

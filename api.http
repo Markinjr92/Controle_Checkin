@@ -2,17 +2,27 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-"tittle": "Jogo Imperadores 123",
-"details": "teste 123",
-"maximumAttendees": 100
+"tittle": "Novo Evento 2",
+"details": null,
+"maximumAttendees": 1
 }
 
 ###
 
-POST http://localhost:3333/events/31e6922c-1dae-408a-9e00-7f77a3f5d868/attendees
+POST http://localhost:3333/events/49b65f52-9ac4-4d2a-ae2b-95bc89e282d7/attendees
 Content-Type: application/json
 
 {
     "name": "Marcos Antonio Nogueira",
-    "email": "marcos@gmail.com.br"
+    "email": "marcos3@gmail.com.br"
 }
+
+###
+
+GET http://localhost:3333/events/49b65f52-9ac4-4d2a-ae2b-95bc89e282d7
+
+###
+
+GET http://localhost:3333/attendees/1/badge
+
+
