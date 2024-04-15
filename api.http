@@ -2,7 +2,7 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-"tittle": "Novo Evento 2",
+"tittle": 125,
 "details": null,
 "maximumAttendees": 1
 }
@@ -25,4 +25,11 @@ GET http://localhost:3333/events/49b65f52-9ac4-4d2a-ae2b-95bc89e282d7
 
 GET http://localhost:3333/attendees/1/badge
 
+###
+
+GET http://localhost:3333/attendees/5/check-in
+
+###
+
+GET http://localhost:3333/events/49b65f52-9ac4-4d2a-ae2b-95bc89e282d7/attendees?query=antonio
 
